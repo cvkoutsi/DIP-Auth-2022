@@ -20,7 +20,7 @@ Creates the function myImgRotation that for given image and rotation angle θ re
     </table>
 </div>
 
-# Project 2
+# Project 2- Graph Based Image Segmentation
 
 **Image to Graph** \
 Creates the function Image2Graph that for given image returns an affinity matrix that describes the image as a graph
@@ -74,4 +74,56 @@ The results of the above steps can be seen below:
 <img width="497" alt="image" src="https://user-images.githubusercontent.com/95578892/230651206-d34f8c17-1717-4a33-8368-275244db88e9.png">
 <img width="497" alt="image" src="https://user-images.githubusercontent.com/95578892/230651260-b6a607d2-3f0d-44d6-8aed-4d54c5315641.png">
 
-# Project 3
+# Project 3- High Dynamic Range Imaging
+
+This project has the goal of creatining high dynamic range (HDR) images using multiple low dynamic range images (LDR) using tone mapping.
+
+**Multi-frame HDR imaging** \
+Implements the mergeLDRStack routine that given a list of LDR images, their corresponding exposure times and a weighting function returns the radiance map. The radiance map is calculated using the weighted merge of images that is HDR imaging. 
+
+The use of this routine on a test image can be seen below:
+<p>
+<img src="https://user-images.githubusercontent.com/95578892/230722979-4ef032f3-3702-4308-92c1-0c87ccd01eb2.png" width="497" />
+</p>
+
+**Tone Mapping**
+Creates the toneMapping function that for given radiance map and a gamma coefficient returns the toned image. The toned image is created using tone mapping that assigns the colour range of an HDR image to a limited dynamic range. 
+
+<div id="image-table">
+    <table>
+	    <tr>
+          <td style="padding:10px">
+            	<img src="https://user-images.githubusercontent.com/95578892/230723395-47bad017-28ab-4d93-957b-7209ce3a586c.png" width="350" height="200"/>
+          </td>
+    	    <td style="padding:10px">
+        	    <img src="https://user-images.githubusercontent.com/95578892/230723426-212d4f89-521d-46b7-a8a8-e2c1a6a7ee04.png" width="350" height="200"/>
+      	    </td>
+        </tr>
+    </table>
+</div>
+
+
+**Radiometric calibration**
+Creates the function estimateResponseCurve that returns the response the response curve of the cammera for the RGB channels. The inputs are:
+- The stack of the LDR images
+- The corresponding exposure times
+- A lambda smoothing coefficient
+- A weighting Function
+
+The response curves of the RGB channels for the first image can be seen below:
+
+<div id="image-table">
+    <table>
+	    <tr>
+    	    <td style="padding:10px">
+        	    <img src="https://user-images.githubusercontent.com/95578892/230723816-01a3eb64-0041-4924-90ff-2a7a8e6029a4.png" width="300"/>
+      	    </td>
+            <td style="padding:10px">
+            	<img src="https://user-images.githubusercontent.com/95578892/230723829-3bc4094c-55cc-4529-864c-cf9d2cc42fe5.png" width="300"/>
+            </td>
+            <td style="padding:10px">
+            	<img src="https://user-images.githubusercontent.com/95578892/230723837-9e24ccf2-78eb-426f-96bb-f072172c462b.png" width="300"/>
+            </td>
+        </tr>
+    </table>
+</div>
